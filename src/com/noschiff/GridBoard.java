@@ -22,9 +22,9 @@ public class GridBoard extends JPanel {
     private boolean won, lost;
 
     //Resources
-    private static final File move = new File("move.wav");
-    private static final File merge = new File("merge.wav");
-    public static final ImageIcon logo = new ImageIcon("logo.png");
+    private static final File move = new File("resources/move.wav");
+    private static final File merge = new File("resources/merge.wav");
+    public static final ImageIcon logo = new ImageIcon("resources/logo.png");
     public static final ImageIcon popUpIcon = new ImageIcon(logo.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 
     //Util
