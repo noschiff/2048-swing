@@ -7,6 +7,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
+/**
+ * @author noschiff
+ */
 public class Game2048 extends JFrame implements ActionListener {
 
     private JMenuBar mb_menu;
@@ -34,6 +37,7 @@ public class Game2048 extends JFrame implements ActionListener {
         mb_menu.add(m_help);
         m_sound = new JCheckBox("Enable Sound");
         m_sound.setSelected(true);
+        m_sound.addActionListener(this);
         mb_menu.add(m_sound);
         mi_new_game = new JMenuItem("New Game");
         mi_new_game.addActionListener(this);
@@ -50,7 +54,6 @@ public class Game2048 extends JFrame implements ActionListener {
         game = new GridBoard();
         add(game);
         game.requestFocusInWindow();
-        m_sound.addActionListener(this);
 
         addComponentListener(new ComponentAdapter() {
             @Override

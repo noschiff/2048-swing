@@ -11,6 +11,9 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * @author noschiff
+ */
 public class GridBoard extends JPanel {
 
     //Mechanics
@@ -106,7 +109,6 @@ public class GridBoard extends JPanel {
     public void paintComponent(Graphics gg) {
         super.paintComponent(gg);
         Graphics2D g = (Graphics2D) gg;
-        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         drawGrid(g);
 
@@ -457,9 +459,7 @@ public class GridBoard extends JPanel {
     private void playSound(File soundFile) {
         try {
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
-            // Get a sound clip resource.
             Clip clip = AudioSystem.getClip();
-            // Open audio clip and load samples from the audio input stream.
             clip.open(audioIn);
             clip.start();
         } catch (Exception ignored) {

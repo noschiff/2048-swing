@@ -2,8 +2,14 @@ package com.noschiff;
 
 import java.awt.*;
 
+/**
+ * @author noschiff
+ *
+ * Object to represent a single tile in the game.
+ */
 public class Tile {
 
+    //colors from https://gist.github.com/hevertonfreitas/b7dd41cdba2be7c571ff0737ab7b296a
     private static final Color[] backgroundColors = {new Color(0xfff4d3), new Color(0xffdac3),
             new Color(0xe7b08e), new Color(0xe7bf8e), new Color(0xffc4c3), new Color(0xE7948e), new Color(0xbe7e56),
             new Color(0xbe5e56), new Color(0x9c3931), new Color(0x701710), new Color(0xEFC84F)};
