@@ -29,6 +29,8 @@ public class GridBoard extends JPanel {
     private static final File merge = new File("resources/merge.wav");
     public static final ImageIcon logo = new ImageIcon("resources/logo.png");
     public static final ImageIcon popUpIcon = new ImageIcon(logo.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+    public static final ImageIcon largeIcon = new ImageIcon(logo.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+
 
     //Util
     private static final Random rand = new Random();
@@ -68,8 +70,6 @@ public class GridBoard extends JPanel {
                     case KeyEvent.VK_L:
                         addTile(0, 0, max);
                         break;
-                    case KeyEvent.VK_A:
-                        GameControl.quit();
                 }
                 repaint();
             }
@@ -92,6 +92,7 @@ public class GridBoard extends JPanel {
         lost = false;
         score = 0;
         repaint();
+        paintComponent(this.getGraphics());
     }
 
     public void reset(int rows, int columns) {
@@ -468,6 +469,10 @@ public class GridBoard extends JPanel {
 
     public void enableSound(boolean selected) {
         sound = selected;
+    }
+
+    public int getScore() {
+        return score;
     }
 
     @Override

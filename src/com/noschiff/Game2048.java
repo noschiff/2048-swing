@@ -16,7 +16,7 @@ public class Game2048 extends JFrame implements ActionListener {
     private JMenu m_file, m_help;
     private JCheckBox m_sound;
     private JMenuItem mi_file_exit, mi_new_game;
-    private JMenuItem mi_help_about;
+    private JMenuItem mi_help_about, mi_help_directions;
 
     private GridBoard game;
 
@@ -48,7 +48,12 @@ public class Game2048 extends JFrame implements ActionListener {
         m_file.add(mi_file_exit);
         mi_help_about = new JMenuItem("About");
         mi_help_about.addActionListener(this);
+        mi_help_directions = new JMenuItem("Directions");
+        mi_help_directions.addActionListener(this);
         m_help.add(mi_help_about);
+        m_help.add(new JSeparator());
+        m_help.add(mi_help_directions);
+
 
         // Setup game board
         game = new GridBoard();
@@ -73,6 +78,8 @@ public class Game2048 extends JFrame implements ActionListener {
             GameControl.newGame(game);
         } else if (ae.getSource().equals(mi_help_about)) {
             GameControl.about();
+        } else if (ae.getSource().equals(mi_help_directions)) {
+            GameControl.directions();
         } else if (ae.getSource().equals(m_sound)) {
             game.enableSound(m_sound.isSelected());
             requestGameFocus();
